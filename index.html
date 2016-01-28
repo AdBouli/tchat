@@ -1,9 +1,14 @@
 <html>
+
   <head>
+
     <title>Tchat !</title>
     <link href="css/styles.css" rel="stylesheet" />
+
   </head>
+
   <body>
+
     <h1> Tchat! </h1>
     
     <form id="loginForm">
@@ -11,9 +16,24 @@
 	    <input type="mail" name="mail"     id="mail"     placeholder="Votre adresse mail" required>
 	    <input type="submit" value="Se connecter">
     </form>
+
+    <ul id="users" style="list-style-type:none">
+    
+    </ul>
+    
+    <div id="tchat">
+      
+    </div>
+
+    <form action="" id="msgForm">
+      <textarea type="text" name="msg" id="msg" placeholder="Votre message" cols="48" required></textarea>
+      <input type="submit" value="Envoyer">
+    </form>
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://localhost:1337/socket.io/socket.io.js"></script>
     <script src="js/client.js"></script>
   </body>
+
 </html>
