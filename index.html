@@ -9,31 +9,44 @@
 
   <body>
 
-    <h1> Tchat! </h1>
-    
-    <form id="loginForm">
-	    <input type="text" name="username" id="username" placeholder="Votre pseudo"       required>
-	    <input type="mail" name="mail"     id="mail"     placeholder="Votre adresse mail" required>
-	    <input type="submit" value="Se connecter">
-    </form>
+    <div id="main"> <!-- main -->
 
-    <ul id="users" style="list-style-type:none">
-    
-    </ul>
-    
-    <div id="tchat">
+      <div id="divTitle"> <!-- divTitle -->
+        <h1>Tchat!</h1>
+      </div> <!-- divTitle -->
+
+      <div id="divLoginForm"> <!-- divLoginUser -->
+        <form id="loginForm">
+          <input type="text" name="username" id="username" placeholder="Votre pseudo" required>
+          <input type="mail" name="mail" id="mail" placeholder="Votre adresse mail" required>
+          <input type="submit" value="Se connecter">
+        </form>
+      </div> <!-- divLoginUser -->
+
+      <div id="divUsers"> <!-- divUsers-->
+        <ul id="users" style="list-style-type:none">
+        </ul>
+      </div> <!-- divUsers -->
       
-    </div>
+      <div id="divTchat"> <!-- divTchat -->
+      </div> <!-- divTchat -->
 
-    <form action="" id="msgForm">
-      <textarea type="text" name="msg" id="msg" placeholder="Votre message" cols="48" required></textarea>
-      <input type="submit" value="Envoyer">
-    </form>
+      <div id="divMsgForm"><!-- divMsgForm -->
+        <form action="" id="msgForm">
+          <textarea type="text" name="msg" id="msg" placeholder="Votre message" cols="48" required></textarea>
+          <input type="submit" value="Envoyer">
+        </form>
+      </div> <!-- divMsgForm -->
 
-    
+    </div> <!-- main -->
+
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Server -->
     <script src="http://localhost:1337/socket.io/socket.io.js"></script>
+    <!-- Client -->
     <script src="js/client.js"></script>
+
   </body>
 
 </html>

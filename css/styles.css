@@ -2,3 +2,57 @@ body{
   background-image: url("../img/1786103.jpg");
   color: lightgrey;
 }
+
+#main{
+	display: block;
+	float: left;
+	width:900px;
+}
+
+#divTitle{
+	display: block;
+	float: left;
+	width:100%;
+}
+
+#divLoginForm{
+	display: block;
+	float: left;
+	width:100%;
+}
+
+#loginForm{
+	display: block;
+	float: left;
+	width:100%;
+}
+
+#divUsers{
+	display: block;
+	float: left;
+	width:20%;
+}
+
+#users{
+	display: block;
+	float: left;
+	width:100%;
+}
+
+#divTchat{
+	display: block;
+	float: left;
+	width:80%;
+}
+
+#divMsgForm{
+	display: block;
+	float: right;
+	width:80%;
+}
+
+#msgForm{
+	display: block;
+	float: left;
+	width:100%;
+}
