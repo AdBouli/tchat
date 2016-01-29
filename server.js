@@ -38,7 +38,7 @@ io.sockets.on("connection", function(socket){
 		message.h = date.getHours();
 		message.m = date.getMinutes();
 		io.sockets.emit("newMsg", message);
-	})
+	});
 
 	// L'utilisateur se déconnecte
 	socket.on("disconnect", function(){
