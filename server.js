@@ -39,6 +39,7 @@ io.sockets.on("connection", (socket) => {
 		date = new Date();
 		message.h = date.getHours();
 		message.m = date.getMinutes();
+		message.s = date.getSeconds();
 		io.sockets.emit("newMsg", message);
 	});
 

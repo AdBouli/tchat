@@ -14,6 +14,7 @@
 	// Quand l'utilisateur se connecte
 	socket.on("logged", () => {
 		$("#loginForm").fadeOut();
+		$("#divTchat").show();
 		$("#msg").focus();
 	});
 
@@ -27,13 +28,24 @@
 
 	// Quand un utilisateur poste un message
 	socket.on("newMsg", (message) => {
+		var idDiv = message.user.mail 
+							+ message.h
+							+ message.m
+							+ message.s;
 		$("#tchat").append(
-			"<p><strong>" 
+			"<div class='aMsg' id='" + idDiv + "'>"
+			+ "<div class='content'>"
+			+ "<strong>" 
 			+ message.user.username 
-			+ " :</strong> " 
+			+ " : </strong>"
 			+ message.message
-			+ "</p>"
+			+ "</div>"
+			+ "<div class='time'>"
+			+ message.h + ":" + message.m
+			+ "</div>"
+			+ "</div>"
 		);
+		$("#"+idDiv).scrollBottom();
 	});
 
 	// Quand un nouvel utilisateur se connecte

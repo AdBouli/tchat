@@ -40,18 +40,49 @@ body{
 }
 
 #divTchat{
-	display: block;
+	display: none;
 	float: left;
 	height: 500px;
 	width:79%;
 	border: solid white 2px;
+}
+
+#tchat{
+	display: block;
+	float: left;
+	height: 400px;
+	width: 100%;
 	overflow-y: scroll
 }
 
 #divMsgForm{
 	display: block;
-	float: right;
-	width:80%;
+	float: left;
+	height: 100px;
+	width: 100%;
+}
+
+#divMsgForm textarea{
+	width: 100%;
+}
+
+.aMsg{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.aMsg .content{
+	display: block;
+	float: left;
+	width: 80%;
+}
+
+.aMsg .time{
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: right;
 }
 
 #msgForm{
