@@ -42,7 +42,10 @@ body{
 #divTchat{
 	display: block;
 	float: left;
-	width:80%;
+	height: 500px;
+	width:79%;
+	border: solid white 2px;
+	overflow-y: scroll
 }
 
 #divMsgForm{

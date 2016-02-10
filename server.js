@@ -2,7 +2,8 @@ console.log("Start");
 
 var http = require("http");
 
-httpServer = http.createServer(function(req, res) {
+var httpServer = http.createServer((req, res) => {
+	res.end('ok');
 	console.log("Server Create");
 });
 
@@ -12,18 +13,18 @@ var io = require("socket.io").listen(httpServer);
 
 var users = {};
 
-io.sockets.on("connection", function(socket){
+io.sockets.on("connection", (socket) => {
 	
 	console.log("New user");
 	var me = false;
 
 	// Liste des users connectés
 	for(var k in users){
-		socket.emit("newUser", user[k]);
+		socket.emit("newUser", users[k]);
 	}
 	
 	// L'utilisateur se connecte
-	socket.on("login", function(user){
+	socket.on("login", (user) => {
 		me = user;
 		me.id = user.mail.replace('@', '-').replace('.','-');
 		socket.emit("logged");
@@ -32,7 +33,8 @@ io.sockets.on("connection", function(socket){
 	});
 
 	// L'utilisateur poste un nouveau message
-	socket.on("newMsg", function(message){
+	socket.on("postMsg", (message) => {
+		console.log(message);
 		message.user = me;
 		date = new Date();
 		message.h = date.getHours();
@@ -41,14 +43,12 @@ io.sockets.on("connection", function(socket){
 	});
 
 	// L'utilisateur se déconnecte
-	socket.on("disconnect", function(){
+	socket.on("disconnect", () => {
 		if(!me){
 			return false;
 		}
 		delete users[me.id];
 		io.sockets.emit('discUser', me);
 	});
-
-
 	
 });
